@@ -9,6 +9,7 @@ int main() {
     cin>>CountVersh>>CountEdges;
     Graph graph(CountVersh, CountEdges);
     vector<Edge> ostov = graph.Ostov();
+
     return 0;
 }
 
