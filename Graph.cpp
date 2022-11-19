@@ -47,25 +47,39 @@ void Graph::Qsort(int start, int end) {
         Qsort(l, end);
 }
 
+bool Graph::proverka(int ind, vector<Edge> vrem) {
+    if(this->vec[ind].getStart().getNumber() == vrem[ind].getStart().getNumber() && this->vec[ind].getAnEnd().getNumber() == vrem[ind].getAnEnd().getNumber()){
+        return false;
+    }
+    return true;
+}
+
 vector<Edge> Graph::Ostov() {
     vector<Edge> vrem;
     for(int i=0;i<vec.size();i++){    //Первое действие, создание множеств соедененных вершин
         if(v[vec[i].getStart().getNumber() - 1].getKolConnections() == 0 || v[vec[i].getAnEnd().getNumber() - 1].getKolConnections() == 0){
-            vrem.push_back(vec[i]);
-            cout<<"!\n";
             v[vec[i].getStart().getNumber() - 1].setKolConnections(vec[i].getStart().getKolConnections() + 1);
             v[vec[i].getAnEnd().getNumber() - 1].setKolConnections(vec[i].getAnEnd().getKolConnections() + 1);
+            vec[i].getStart().setKolConnections(vec[i].getStart().getKolConnections() + 1);
+            vec[i].getAnEnd().setKolConnections(vec[i].getAnEnd().getKolConnections() + 1);
+            vrem.push_back(vec[i]);
         }
     }
 
-    /*for(int i=0;i<vec.size();i++){
-        if()
-    }*/
-
-    for(int i=0;i<vrem.size();i++){
-        cout<<vrem[i].getStart().getNumber()<<" "<<vrem[i].getAnEnd().getNumber()<<" "<<vrem[i].getWeight()<<"\n";
+    for(int i=0;i<vec.size();i++){
+        if(proverka(i, vrem)){
+            vrem.push_back(vec[i]);
+            break;
+        }
     }
 
+    int weight = 0;
+    cout<<"Итоговое остовное дерево методом Краскала\n";
+    for(int i=0;i<vrem.size();i++){
+        weight += vrem[i].getWeight();
+        cout<<vrem[i].getStart().getNumber()<<" "<<vrem[i].getAnEnd().getNumber()<<" "<<vrem[i].getWeight()<<"\n";
+    }
+    cout<<"Вес остовного дерева - "<<weight;
 
     return vrem;
 }
