@@ -12,4 +12,6 @@ void Versh::setKolConnections(int kolConnections) {
     kol_connections = kolConnections;
 }
 
-Versh::Versh(int number){ this->number = number; }
+Versh::Versh(int number){
+    this->number = number;
+}

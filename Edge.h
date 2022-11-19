@@ -1,5 +1,6 @@
 #ifndef PR5_EDGE_H
 #define PR5_EDGE_H
+
 #include "Versh.h"
 
 class Edge {

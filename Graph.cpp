@@ -66,6 +66,7 @@ vector<Edge> Graph::Ostov() {
         cout<<vrem[i].getStart().getNumber()<<" "<<vrem[i].getAnEnd().getNumber()<<" "<<vrem[i].getWeight()<<"\n";
     }
 
+
     return vrem;
 }
 

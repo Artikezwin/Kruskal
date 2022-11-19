@@ -1,6 +1,7 @@
 #include "Edge.h"
 #include "Versh.h"
 
+
 Edge::Edge(Versh &start, Versh &end, int weight) : start(start), end(end) {
     this->start = start;
     this->end = end;

@@ -15,5 +15,4 @@ public:
     vector<Edge> Ostov();
 };
 
-
 #endif //PR5_GRAPH_H

@@ -14,5 +14,4 @@ public:
     Versh(int number);
 };
 
-
 #endif //PR5_VERSH_H
