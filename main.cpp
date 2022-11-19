@@ -8,11 +8,13 @@ int main() {
     cout<<"Введите сначала кол-во вершин графа, затем кол-во ребер графа\n";
     cin>>CountVersh>>CountEdges;
     Graph graph(CountVersh, CountEdges);
+    vector<Edge> ostov = graph.Ostov();
     return 0;
 }
 
 /*
 7 12
+
 1 2 20
 2 3 15
 3 4 3

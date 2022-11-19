@@ -1,16 +1,18 @@
 #ifndef PR5_EDGE_H
 #define PR5_EDGE_H
+#include "Versh.h"
 
 class Edge {
-    int start;  //откуда соеденяет
-    int end;    //куда соеденяет
-    int weight; //вес ребра
+    Versh start;    //откуда соеденяет
+    Versh end;      //куда соеденяет
+    int weight;      //вес ребра
+
 public:
-    Edge(int start, int end, int weight);
+    Edge(Versh &start, Versh &end, int weight);
 
-    int getStart() const;
+    Versh getStart() const;
 
-    int getAnEnd() const;
+    Versh getAnEnd() const;
 
     int getWeight() const;
 };
